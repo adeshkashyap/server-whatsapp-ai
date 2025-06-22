@@ -58,7 +58,7 @@ function run() {
 
   const files = fs.readdirSync(PATCH_DIR).filter(f => f.endsWith(".json"));
   if (files.length === 0) {
-    console.log("ℹ️ No new patches to apply.");
+    console.log("ℹNo new patches to apply.");
     return;
   }
 
@@ -69,7 +69,7 @@ function run() {
 
     const approvedFiles = ["intent-ai.js", "server.js"];
     if (!approvedFiles.includes(patch.targetFile)) {
-      console.warn(`🚫 Skipping patch for disallowed file: ${patch.targetFile}`);
+      console.warn(`Skipping patch for disallowed file: ${patch.targetFile}`);
       return;
     }
 
