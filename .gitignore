@@ -1,0 +1,11 @@
+node_modules/
+frontend/admin-react/node_modules/
+self-patch-history.json
+.env
+.DS_Store
+dist/
+build/
+*.log
+backend/.wwebjs_auth/
+backend/.wwebjs_cache/
+*.bak.*
