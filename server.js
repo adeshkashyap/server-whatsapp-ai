@@ -83,7 +83,7 @@ const createClient = async () => {
 
 
     client.on('qr', (qr) => {
-      console.log('📲 QR Code received');
+      console.log('QR Code received');
       qrCode = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(qr)}`;
       isWhatsAppConnected = false;
       connectedNumber = null;
@@ -107,7 +107,7 @@ const createClient = async () => {
     });
 
     client.on('disconnected', async (reason) => {
-      console.warn('🔌 WhatsApp disconnected:', reason);
+      console.warn(' WhatsApp disconnected:', reason);
       try {
         await client.destroy();
         if (mongoStore) {
@@ -304,7 +304,7 @@ if (fs.existsSync(path.join(frontendPath, 'index.html'))) {
 connectDB()
   .then(() => {
     httpServer.listen(PORT, async () => {
-      console.log(`🟢 Server running at: http://localhost:${PORT}`);
+      console.log(`Server running at: http://localhost:${PORT}`);
       initWebSocket(httpServer);
       createClient();
 
@@ -312,7 +312,7 @@ connectDB()
       try {
         await import('open').then(mod => mod.default('http://localhost:3000/login'));
 
-        console.log('🌐 Opened frontend at http://localhost:3000/login');
+        console.log('Opened frontend at http://localhost:3000/login');
       } catch (err) {
         console.warn(' Could not open browser:', err.message);  
       }
